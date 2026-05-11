@@ -43,6 +43,12 @@ def ejercicio2():
 
     return render_template('ejercicio2.html', nombre_mayor=nombre_mayor, cantidad=cantidad)
 
+
+@app.route('/creditos')
+def creditos():
+    return render_template('creditos.html')
+
+
 if __name__ == '__main__':
     app.run(debug=True)
 ()
