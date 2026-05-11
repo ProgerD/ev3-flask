@@ -46,7 +46,7 @@ def ejercicio2():
 
 @app.route('/creditos')
 def creditos():
-    return render_template('creditos.html')
+    return render_template('repositorio.html')
 
 
 if __name__ == '__main__':
