@@ -44,8 +44,8 @@ def ejercicio2():
     return render_template('ejercicio2.html', nombre_mayor=nombre_mayor, cantidad=cantidad)
 
 
-@app.route('/creditos')
-def creditos():
+@app.route('/repositorio')
+def repositorio():
     return render_template('repositorio.html')
 
 
