@@ -1,0 +1,43 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Ejercicio 1</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="contenedor">
+        <h1>Ejercicio 1</h1>
+        <p class="instruccion">
+            Ingresa 3 notas entre 10 y 70, y una asistencia entre 0 y 100 para calcular el promedio y el estado final.
+        </p>
+
+        <form method="POST">
+            <label>Nota 1:</label>
+            <input type="number" name="nota1" min="10" max="70" required>
+
+            <label>Nota 2:</label>
+            <input type="number" name="nota2" min="10" max="70" required>
+
+            <label>Nota 3:</label>
+            <input type="number" name="nota3" min="10" max="70" required>
+
+            <label>Asistencia (%):</label>
+            <input type="number" name="asistencia" min="0" max="100" required>
+
+            <button type="submit">Enviar</button>
+        </form>
+
+        {% if promedio is not none %}
+        <div class="resultado">
+            <p><strong>Promedio:</strong> {{ promedio|round(1) }}</p>
+            <p><strong>Estado:</strong> {{ resultado }}</p>
+        </div>
+        {% endif %}
+
+        <a href="{{ url_for('inicio') }}" class="volver">Volver al inicio</a>
+    </div>
+</body>
+</html>
+

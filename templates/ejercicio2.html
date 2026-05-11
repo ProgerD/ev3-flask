@@ -1,0 +1,39 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Ejercicio 2</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="contenedor">
+        <h1>Ejercicio 2</h1>
+        <p class="instruccion">
+            Ingresa 3 nombres diferentes para identificar cuál tiene más caracteres y cuántos tiene.
+        </p>
+
+        <form method="POST">
+            <label>Nombre 1:</label>
+            <input type="text" name="nombre1" required>
+
+            <label>Nombre 2:</label>
+            <input type="text" name="nombre2" required>
+
+            <label>Nombre 3:</label>
+            <input type="text" name="nombre3" required>
+
+            <button type="submit">Enviar</button>
+        </form>
+
+        {% if nombre_mayor is not none %}
+        <div class="resultado">
+            <p><strong>Nombre con más caracteres:</strong> {{ nombre_mayor }}</p>
+            <p><strong>Cantidad de caracteres:</strong> {{ cantidad }}</p>
+        </div>
+        {% endif %}
+
+        <a href="{{ url_for('inicio') }}" class="volver">Volver al inicio</a>
+    </div>
+</body>
+</html>
